@@ -1,0 +1,25 @@
+[window]
+padding.x = 0
+padding.y = 0
+
+opacity = 1
+blur = true
+
+decorations = "none"
+
+[font]
+normal.family = "Hurmit Nerd Font Mono"
+bold.family = "Hurmit Nerd Font Mono"
+bold.style = "Bold"
+size = 6
+
+[selection]
+save_to_clipboard = true
+
+[terminal.shell]
+program = "/usr/bin/zsh"
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/everforest_dark.toml"
+]
