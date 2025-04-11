@@ -1,0 +1,33 @@
+# Source https//github.com/tyrannicaltoucan/vim-deep-space
+
+# Default colors
+[colors.primary]
+background = "#101010"
+foreground = "#DDDDDD"
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = "#DDDDDD"
+cursor = "#666666"
+
+# Normal colors
+[colors.normal]
+black = "#000000"
+red = "#D70000"
+green = "#789978"
+yellow = "#FFAA88"
+blue = "#7788AA"
+magenta = "#DEEEED"
+cyan = "#708090"
+white = "#DDDDDD"
+
+# Bright colors
+[colors.bright]
+black = "#000000"
+red = "#D70000"
+green = "#789978"
+yellow = "#FFAA88"
+blue = "#7788AA"
+magenta = "#DEEEED"
+cyan = "#708090"
+white = "#DDDDDD"

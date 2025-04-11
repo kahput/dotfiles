@@ -1,0 +1,50 @@
+[window]
+padding.x = 5
+padding.y = 10
+
+opacity = 1
+blur = false
+
+decorations = "none"
+
+[font]
+normal.family = "FiraCode Nerd Font Mono"
+normal.style = "Regular"
+
+[selection]
+save_to_clipboard = true
+
+[terminal.shell]
+program = "/usr/bin/bash"
+
+# Default colors
+[colors.primary]
+background = "#101010"
+foreground = "#8E8E8E"
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = "#3A3A3A"
+cursor = "#DDDDDD"
+
+# Normal colors
+[colors.normal]
+black = "#000000"
+red = "#D70000"
+green = "#789978"
+yellow = "#FFAA88"
+blue = "#7788AA"
+magenta = "#DEEEED"
+cyan = "#708090"
+white = "#DDDDDD"
+
+# Bright colors
+[colors.bright]
+black = "#000000"
+red = "#D70000"
+green = "#789978"
+yellow = "#FFAA88"
+blue = "#7788AA"
+magenta = "#DEEEED"
+cyan = "#708090"
+white = "#DDDDDD"
