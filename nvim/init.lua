@@ -147,7 +147,6 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = false
-vim.opt.listchars = { tab = "▸ ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -170,8 +169,6 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", {})
 vim.keymap.set("n", "<C-u>", "<C-u>zz", {})
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
@@ -182,6 +179,8 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+vim.keymap.set("n", "tt", "<cmd>ClangdSwitchSourceHeader<CR>")
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -666,6 +665,8 @@ require("lazy").setup({
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 			require("mason-lspconfig").setup({
+				ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+				automatic_installation = false,
 				handlers = {
 					function(server_name)
 						local server = servers[server_name] or {}
@@ -946,7 +947,7 @@ require("lazy").setup({
 	-- require 'kickstart.plugins.indent_line',
 	-- require 'kickstart.plugins.lint',
 	require("kickstart.plugins.autopairs"),
-	-- require 'kickstart.plugins.neo-tree',
+	require("kickstart.plugins.neo-tree"),
 	-- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
